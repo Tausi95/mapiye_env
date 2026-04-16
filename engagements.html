@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Engagements — Costantine Mapiye</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    .eng-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: start; }
+    .sidebar-card {
+      background: var(--nb-black);
+      color: white;
+      border-radius: var(--radius);
+      padding: 28px;
+      position: sticky;
+      top: 80px;
+    }
+    .sidebar-card h3 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--nb-red); margin-bottom: 16px; }
+    .sidebar-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 16px; }
+    .sidebar-icon { font-size: 1.2rem; margin-top: 1px; flex-shrink: 0; }
+    .sidebar-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; }
+    .sidebar-val { font-size: 0.88rem; color: #ddd; margin-top: 2px; }
+    .eng-highlight {
+      background: linear-gradient(135deg, #fff5f7, #fff);
+      border: 1px solid #f8c0cb;
+      border-left: 4px solid var(--nb-red);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+    .eng-highlight h4 { font-size: 0.85rem; font-weight: 700; color: var(--nb-red); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .eng-highlight p { font-size: 0.88rem; color: #555; line-height: 1.7; }
+    @media (max-width: 900px) {
+      .eng-grid { grid-template-columns: 1fr; }
+      .sidebar-card { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    USA B1/B2 Visa Application Portfolio &nbsp;|&nbsp; <span>Costantine Mapiye</span> &nbsp;|&nbsp; Business Engagements
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nb-logo">NB</div>
+        <div>
+          <div class="brand-name">Costantine Mapiye</div>
+          <div class="brand-sub">Business &amp; Marketing Manager</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="letter.html">Cover Letter</a></li>
+        <li><a href="engagements.html" class="active">Engagements</a></li>
+        <li><a href="itinerary.html">Itinerary</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+      <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Business Engagements</h1>
+    <p>Professional activities, campaigns, and milestones — New Balance Cape Town</p>
+  </div>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="eng-grid">
+
+        <!-- SIDEBAR -->
+        <div>
+          <div class="sidebar-card">
+            <h3>Quick Profile</h3>
+            <div class="sidebar-item">
+              <div class="sidebar-icon">&#127968;</div>
+              <div>
+                <div class="sidebar-label">Employer</div>
+                <div class="sidebar-val">New Balance Cape Town</div>
+              </div>
+            </div>
+            <div class="sidebar-item">
+              <div class="sidebar-icon">&#128188;</div>
+              <div>
+                <div class="sidebar-label">Role</div>
+                <div class="sidebar-val">Business &amp; Marketing Manager</div>
+              </div>
+            </div>
+            <div class="sidebar-item">
+              <div class="sidebar-icon">&#128197;</div>
+              <div>
+                <div class="sidebar-label">In Role Since</div>
+                <div class="sidebar-val">2020 (promoted to Manager 2022)</div>
+              </div>
+            </div>
+            <div class="sidebar-item">
+              <div class="sidebar-icon">&#128205;</div>
+              <div>
+                <div class="sidebar-label">Locations Managed</div>
+                <div class="sidebar-val">V&amp;A Waterfront &amp; Canal Walk</div>
+              </div>
+            </div>
+            <div class="sidebar-item">
+              <div class="sidebar-icon">&#128101;</div>
+              <div>
+                <div class="sidebar-label">Team Size</div>
+                <div class="sidebar-val">12 Direct Reports</div>
+              </div>
+            </div>
+            <div class="sidebar-item">
+              <div class="sidebar-icon">&#128176;</div>
+              <div>
+                <div class="sidebar-label">Revenue Oversight</div>
+                <div class="sidebar-val">R12M+ per annum</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:24px;">
+            <div class="card" style="text-align:center;">
+              <p style="font-size:0.8rem; color:#888; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.08em;">Connect on Socials</p>
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <a href="https://www.linkedin.com/in/costantine-mapiye" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center;">in &nbsp; LinkedIn</a>
+                <a href="https://www.facebook.com/costantine.mapiye" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content:center; border-color:#1877f2; color:#1877f2;">f &nbsp; Facebook</a>
+                <a href="https://x.com/CostantineM" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content:center;">𝕏 &nbsp; X / Twitter</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAIN TIMELINE -->
+        <div>
+          <div class="section-label">Career Timeline</div>
+          <h2 class="section-title">Professional Engagements</h2>
+          <p class="section-sub">A chronological record of key business activities and milestones.</p>
+
+          <div class="eng-highlight">
+            <h4>&#128308; Current Focus — 2026</h4>
+            <p>Leading the Cape Town winter collection launch campaign across both flagship stores while coordinating with NB HQ Boston for the upcoming brand immersion programme and planning my professional development visit to the USA.</p>
+          </div>
+
+          <div class="timeline">
+
+            <div class="tl-item">
+              <div class="tl-date">Jan 2026 — Present</div>
+              <div class="tl-title">2026 Winter Campaign Launch — New Balance Cape Town</div>
+              <div class="tl-body">Spearheading the full strategy and execution of New Balance's winter 2026 collection
+              launch across V&amp;A Waterfront and Canal Walk stores. Campaign includes in-store activations,
+              influencer partnerships, and digital ad spend optimisation across Meta and Google platforms.
+              Early Q1 sales results show a 22% increase compared to the same period in 2025.</div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-date">October 2025</div>
+              <div class="tl-title">NB South Africa Regional Manager's Conference — Johannesburg</div>
+              <div class="tl-body">Presented Cape Town retail performance data and strategic insights at the biannual
+              NB South Africa Regional Managers' Conference held in Sandton, Johannesburg. Delivered a segment
+              on consumer behaviour trends in the Western Cape market and co-facilitated a workshop on digital-first
+              marketing approaches for physical retail stores.</div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-date">August 2025</div>
+              <div class="tl-title">Cape Town Sanlam Cape Town Marathon — NB Brand Activation</div>
+              <div class="tl-body">Managed end-to-end brand activation for New Balance at the Sanlam Cape Town Marathon —
+              one of the most prestigious road running events in Africa. The activation included a branded
+              experiential zone, product showcase, athlete meet-and-greet, and live social media coverage.
+              Over 3,200 brand touchpoints logged and 280+ pairs of Fresh Foam X sold on event day.</div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-date">June 2025</div>
+              <div class="tl-title">New Balance x Local Athlete Partnership Programme</div>
+              <div class="tl-body">Initiated and concluded partnership agreements with three emerging Cape Town-based
+              athletes (running, basketball, and street culture) to serve as local NB brand ambassadors.
+              Developed ambassador briefs, content calendars, and performance KPIs. Campaign generated
+              R480,000 in attributed digital-driven revenue within the first 60 days.</div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-date">March 2025</div>
+              <div class="tl-title">Canal Walk Store Refresh &amp; Concept Rollout</div>
+              <div class="tl-body">Oversaw the full concept refresh of the Canal Walk New Balance store including new
+              fixture layouts, in-store storytelling panels, and a dedicated "Heritage Wall" celebrating NB's
+              Boston origins. The project was completed on time and under budget, resulting in a 31% uplift
+              in average basket value in the month post-launch.</div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-date">November 2024</div>
+              <div class="tl-title">Black Friday Campaign — R2.1M Revenue Weekend</div>
+              <div class="tl-body">Planned and executed New Balance Cape Town's most successful Black Friday campaign
+              to date, generating R2.1M in combined weekend sales across both locations. Strategy included
+              countdown digital campaigns, exclusive pre-launch VIP access, and a staff training blitz
+              the week prior to ensure peak in-store experience delivery.</div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-date">2023 — 2024</div>
+              <div class="tl-title">NB Running Community — Cape Town Launch</div>
+              <div class="tl-body">Founded and now oversees the New Balance Running Community in Cape Town —
+              a free weekly community run anchored at the V&amp;A Waterfront store. The initiative has grown
+              to over 340 registered members and serves as a customer retention, brand advocacy, and
+              community-building platform. The programme is now used as a case study by NB South Africa
+              national marketing team.</div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-date">2022</div>
+              <div class="tl-title">Promoted to Business &amp; Marketing Manager</div>
+              <div class="tl-body">Promoted from Senior Sales Consultant to Business and Marketing Manager, assuming
+              full responsibility for both Cape Town flagship locations. Role encompasses strategic marketing
+              planning, business performance reporting, partner and supplier management, team leadership
+              (12 staff), and direct reporting to the NB South Africa National Retail Director.</div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-date">2020 — 2022</div>
+              <div class="tl-title">Senior Sales Consultant — New Balance V&amp;A Waterfront</div>
+              <div class="tl-body">Joined New Balance at the V&amp;A Waterfront store as a Senior Sales Consultant.
+              Consistently ranked in the top 3 performers nationally within NB South Africa's retail network.
+              Led in-store training initiatives and was appointed as the store's social media coordinator
+              in early 2021.</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY METRICS -->
+  <section class="page-section">
+    <div class="container">
+      <div class="section-label">Key Achievements</div>
+      <h2 class="section-title">Performance Highlights</h2>
+      <p class="section-sub">Selected quantified business outcomes under my leadership at New Balance Cape Town.</p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">&#128200;</div>
+          <h3>Revenue Growth</h3>
+          <p>Grew combined Cape Town store revenue from R7.2M to R12M+ annually between 2022 and 2025 — a 66% increase over 3 years.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128081;</div>
+          <h3>Brand Campaigns</h3>
+          <p>Conceptualised and executed over 40 brand campaigns including seasonal, product launch, event, and influencer-led activations.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#127939;</div>
+          <h3>Community Programme</h3>
+          <p>Built the NB Cape Town Running Community from 0 to 340+ members — now a national NB South Africa case study.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128247;</div>
+          <h3>Digital Reach</h3>
+          <p>Scaled Cape Town store social media following to 28K+ across Instagram and Facebook, driving 18% of monthly foot traffic.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128101;</div>
+          <h3>Team Development</h3>
+          <p>Promoted 3 staff members from junior roles to senior positions through structured coaching and development plans.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#129351;</div>
+          <h3>Top Store Award</h3>
+          <p>Awarded NB South Africa "Store of the Year — Cape Town Region" in 2023 and 2024 consecutive years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Costantine Mapiye</h4>
+        <p>Business &amp; Marketing Manager</p>
+        <p>New Balance — Cape Town, SA</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="letter.html">Cover Letter</a>
+        <a href="engagements.html">Business Engagements</a>
+        <a href="itinerary.html">Itinerary</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.linkedin.com/in/costantine-mapiye" target="_blank" rel="noopener">&#128279; LinkedIn</a>
+        <a href="https://www.facebook.com/costantine.mapiye" target="_blank" rel="noopener">&#128279; Facebook</a>
+        <a href="https://x.com/CostantineM" target="_blank" rel="noopener">&#128279; X (Twitter)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Costantine Mapiye. <span>USA Visa Portfolio.</span></div>
+    </div>
+  </footer>
+
+</body>
+</html>

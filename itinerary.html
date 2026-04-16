@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USA Travel Itinerary — Costantine Mapiye</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    @media print {
+      nav, .topbar, footer, .page-header { display: none !important; }
+      body { background: white; }
+    }
+    .city-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--nb-black);
+      color: white;
+      padding: 16px 24px;
+      border-radius: var(--radius) var(--radius) 0 0;
+      margin-top: 40px;
+    }
+    .city-header:first-of-type { margin-top: 0; }
+    .city-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--nb-red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .city-header h3 { font-size: 1.1rem; font-weight: 800; }
+    .city-header p { font-size: 0.8rem; color: #aaa; }
+    .itin-section { border: 1px solid var(--nb-border); border-top: none; border-radius: 0 0 var(--radius) var(--radius); overflow: hidden; margin-bottom: 8px; }
+    .flight-bar {
+      background: linear-gradient(135deg, #e8f4fd, #d0e8f8);
+      border: 1px solid #b8d8f0;
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .flight-col { flex: 1; min-width: 140px; }
+    .flight-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; }
+    .flight-val { font-size: 1rem; font-weight: 700; color: var(--nb-black); }
+    .flight-arrow { font-size: 1.5rem; color: var(--nb-red); }
+    .info-banner {
+      background: #fffbe6;
+      border: 1px solid #f0d060;
+      border-left: 4px solid #e8b800;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      font-size: 0.87rem;
+      color: #555;
+    }
+    .print-btn { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    USA B1/B2 Visa Application Portfolio &nbsp;|&nbsp; <span>Costantine Mapiye</span> &nbsp;|&nbsp; USA Travel Itinerary
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nb-logo">NB</div>
+        <div>
+          <div class="brand-name">Costantine Mapiye</div>
+          <div class="brand-sub">Business &amp; Marketing Manager</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="letter.html">Cover Letter</a></li>
+        <li><a href="engagements.html">Engagements</a></li>
+        <li><a href="itinerary.html" class="active">Itinerary</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+      <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>USA Travel Itinerary</h1>
+    <p>B1/B2 Professional Visit &nbsp;|&nbsp; 15 May – 29 May 2026 &nbsp;|&nbsp; 14 Days</p>
+  </div>
+
+  <section class="page-section">
+    <div class="container">
+
+      <div class="print-btn">
+        <button class="btn btn-primary" onclick="window.print()">&#128438; Print / Save as PDF</button>
+      </div>
+
+      <!-- TRIP SUMMARY -->
+      <div class="info-banner">
+        &#9888;&#65039; <strong>Note:</strong> This itinerary is prepared for visa application purposes. Specific hotel bookings, meeting confirmation letters, and flight e-tickets are attached as supporting documents. All professional engagements are coordinated with New Balance North America.
+      </div>
+
+      <!-- FLIGHTS -->
+      <div class="section-label">Outbound Flight</div>
+      <div class="flight-bar">
+        <div class="flight-col">
+          <div class="flight-label">Departure</div>
+          <div class="flight-val">Cape Town (CPT)</div>
+          <div style="font-size:0.8rem; color:#666;">15 May 2026 &bull; 20:30</div>
+        </div>
+        <div class="flight-arrow">&#9992;&#65039;</div>
+        <div class="flight-col">
+          <div class="flight-label">Arrival</div>
+          <div class="flight-val">Boston (BOS)</div>
+          <div style="font-size:0.8rem; color:#666;">16 May 2026 &bull; 14:45</div>
+        </div>
+        <div class="flight-col">
+          <div class="flight-label">Airline</div>
+          <div class="flight-val">South African Airways</div>
+          <div style="font-size:0.8rem; color:#666;">Via Johannesburg (JNB)</div>
+        </div>
+        <div>
+          <span class="badge badge-green">Confirmed</span>
+        </div>
+      </div>
+
+      <div class="section-label">Return Flight</div>
+      <div class="flight-bar">
+        <div class="flight-col">
+          <div class="flight-label">Departure</div>
+          <div class="flight-val">New York (JFK)</div>
+          <div style="font-size:0.8rem; color:#666;">28 May 2026 &bull; 22:15</div>
+        </div>
+        <div class="flight-arrow">&#9992;&#65039;</div>
+        <div class="flight-col">
+          <div class="flight-label">Arrival</div>
+          <div class="flight-val">Cape Town (CPT)</div>
+          <div style="font-size:0.8rem; color:#666;">29 May 2026 &bull; 18:40</div>
+        </div>
+        <div class="flight-col">
+          <div class="flight-label">Airline</div>
+          <div class="flight-val">South African Airways</div>
+          <div style="font-size:0.8rem; color:#666;">Via Johannesburg (JNB)</div>
+        </div>
+        <div>
+          <span class="badge badge-green">Confirmed</span>
+        </div>
+      </div>
+
+      <!-- BOSTON -->
+      <div class="city-header">
+        <div class="city-dot">&#127968;</div>
+        <div>
+          <h3>Boston, Massachusetts</h3>
+          <p>16 May – 20 May 2026 &bull; 5 Nights &bull; New Balance HQ City</p>
+        </div>
+        <div style="margin-left:auto;"><span class="badge badge-blue">Phase 1</span></div>
+      </div>
+      <div class="itin-section">
+        <table class="itin-table">
+          <thead>
+            <tr><th>Day</th><th>Date</th><th>Activity</th><th>Location / Notes</th><th>Type</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Day 1</strong></td>
+              <td>16 May</td>
+              <td>Arrival at Logan International Airport. Check-in &amp; rest.</td>
+              <td>Hotel Commonwealth, Boston (near NB HQ)</td>
+              <td><span class="badge badge-gray">Travel</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day 2</strong></td>
+              <td>17 May</td>
+              <td>Welcome orientation at New Balance World HQ — Brighton, Boston. Brand strategy briefing with Global Retail Marketing team.</td>
+              <td>New Balance HQ, 100 Guest St, Brighton, MA</td>
+              <td><span class="badge badge-red">Professional</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day 3</strong></td>
+              <td>18 May</td>
+              <td>NB Retail Manager's Immersion Programme — Day 1. Morning: Consumer insights module. Afternoon: Brand heritage tour of NB archive and museum.</td>
+              <td>NB HQ — Conference Centre</td>
+              <td><span class="badge badge-red">Professional</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day 4</strong></td>
+              <td>19 May</td>
+              <td>NB Retail Manager's Immersion Programme — Day 2. Global marketing alignment session. Dinner with NB Africa &amp; Middle East regional team.</td>
+              <td>NB HQ + Boston waterfront dinner</td>
+              <td><span class="badge badge-red">Professional</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day 5</strong></td>
+              <td>20 May</td>
+              <td>Visit to NB Boston flagship store (Newbury St). Study tour: store layout, VM standards, and customer journey mapping.</td>
+              <td>New Balance, 209 Newbury St, Boston</td>
+              <td><span class="badge badge-blue">Study Tour</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- NEW YORK -->
+      <div class="city-header">
+        <div class="city-dot">&#127961;&#65039;</div>
+        <div>
+          <h3>New York City, New York</h3>
+          <p>20 May – 24 May 2026 &bull; 4 Nights &bull; Brand Partnerships &amp; Retail Study</p>
+        </div>
+        <div style="margin-left:auto;"><span class="badge badge-blue">Phase 2</span></div>
+      </div>
+      <div class="itin-section">
+        <table class="itin-table">
+          <thead>
+            <tr><th>Day</th><th>Date</th><th>Activity</th><th>Location / Notes</th><th>Type</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Day 6</strong></td>
+              <td>20 May</td>
+              <td>Train from Boston South Station to New York Penn Station. Check-in NYC.</td>
+              <td>Amtrak Acela &bull; The Westin New York, 270 W 43rd St</td>
+              <td><span class="badge badge-gray">Travel</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day 7</strong></td>
+              <td>21 May</td>
+              <td>Meeting with NB sports marketing partner — NYC. Afternoon: Visit NB NYC flagship store, SoHo. VM &amp; retail experience audit.</td>
+              <td>NB SoHo Flagship, 489 Broadway</td>
+              <td><span class="badge badge-red">Professional</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day 8</strong></td>
+              <td>22 May</td>
+              <td>Meeting with running lifestyle brand stakeholders. Tour of NB Times Square store. Attend sports industry networking reception.</td>
+              <td>Midtown Manhattan &bull; Industry networking event</td>
+              <td><span class="badge badge-red">Professional</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day 9</strong></td>
+              <td>23 May</td>
+              <td>Retail and cultural exploration: Brooklyn streetwear and sports culture scene. Visits to key independent lifestyle retailers for competitive market research.</td>
+              <td>Brooklyn, NYC</td>
+              <td><span class="badge badge-blue">Research</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day 10</strong></td>
+              <td>24 May</td>
+              <td>Free day — Central Park run with local NB community group. Cultural visits: Metropolitan Museum of Art, High Line.</td>
+              <td>Manhattan, NYC</td>
+              <td><span class="badge badge-green">Leisure</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- LOS ANGELES -->
+      <div class="city-header">
+        <div class="city-dot">&#127774;</div>
+        <div>
+          <h3>Los Angeles, California</h3>
+          <p>24 May – 28 May 2026 &bull; 4 Nights &bull; West Coast Retail &amp; Culture</p>
+        </div>
+        <div style="margin-left:auto;"><span class="badge badge-blue">Phase 3</span></div>
+      </div>
+      <div class="itin-section">
+        <table class="itin-table">
+          <thead>
+            <tr><th>Day</th><th>Date</th><th>Activity</th><th>Location / Notes</th><th>Type</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Day 11</strong></td>
+              <td>24 May</td>
+              <td>Flight JFK → LAX. Check-in Los Angeles. Rest.</td>
+              <td>Delta Air Lines DL 405 &bull; Courtyard Marriott, Culver City</td>
+              <td><span class="badge badge-gray">Travel</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day 12</strong></td>
+              <td>25 May</td>
+              <td>Visit NB LA flagship store — Melrose. Store walk with LA store manager — exchange of best practices and Cape Town insight sharing session.</td>
+              <td>NB Melrose, 7965 Melrose Ave, Los Angeles</td>
+              <td><span class="badge badge-red">Professional</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day 13</strong></td>
+              <td>26 May</td>
+              <td>Meeting with LA-based sports marketing and lifestyle agency. Exploration of NB brand visibility in local fitness &amp; streetwear culture.</td>
+              <td>West Hollywood &bull; Santa Monica</td>
+              <td><span class="badge badge-blue">Research</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day 14</strong></td>
+              <td>27 May</td>
+              <td>Final debrief &amp; reflection. Packing. Final cultural visit — Venice Beach running path &amp; outdoor retail landscape.</td>
+              <td>Venice Beach, Los Angeles</td>
+              <td><span class="badge badge-green">Leisure</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day 15</strong></td>
+              <td>28 May</td>
+              <td>Departure — Flight LAX to JFK, then JFK → Johannesburg → Cape Town.</td>
+              <td>Departs 22:15 from JFK. Returns CPT 29 May 2026.</td>
+              <td><span class="badge badge-gray">Return</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ACCOMMODATION SUMMARY -->
+      <div style="margin-top:48px;">
+        <div class="section-label">Accommodation</div>
+        <h2 class="section-title">Hotel Summary</h2>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-icon">&#127968;</div>
+            <h3>Boston</h3>
+            <p><strong>Hotel Commonwealth</strong><br />500 Commonwealth Ave, Boston, MA<br />Check-in: 16 May &bull; Check-out: 20 May<br /><span class="badge badge-green" style="margin-top:6px;">Confirmed</span></p>
+          </div>
+          <div class="card">
+            <div class="card-icon">&#127961;&#65039;</div>
+            <h3>New York City</h3>
+            <p><strong>The Westin New York</strong><br />270 W 43rd St, New York, NY<br />Check-in: 20 May &bull; Check-out: 24 May<br /><span class="badge badge-green" style="margin-top:6px;">Confirmed</span></p>
+          </div>
+          <div class="card">
+            <div class="card-icon">&#127774;</div>
+            <h3>Los Angeles</h3>
+            <p><strong>Courtyard Marriott</strong><br />Culver City, Los Angeles, CA<br />Check-in: 24 May &bull; Check-out: 28 May<br /><span class="badge badge-green" style="margin-top:6px;">Confirmed</span></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Costantine Mapiye</h4>
+        <p>Business &amp; Marketing Manager</p>
+        <p>New Balance — Cape Town, SA</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="letter.html">Cover Letter</a>
+        <a href="engagements.html">Business Engagements</a>
+        <a href="itinerary.html">Itinerary</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.linkedin.com/in/costantine-mapiye" target="_blank" rel="noopener">&#128279; LinkedIn</a>
+        <a href="https://www.facebook.com/costantine.mapiye" target="_blank" rel="noopener">&#128279; Facebook</a>
+        <a href="https://x.com/CostantineM" target="_blank" rel="noopener">&#128279; X (Twitter)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Costantine Mapiye. <span>USA Visa Portfolio.</span></div>
+    </div>
+  </footer>
+
+</body>
+</html>

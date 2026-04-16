@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lifestyle Gallery — Costantine Mapiye</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .filter-btn {
+      padding: 8px 18px;
+      border: 2px solid var(--nb-border);
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: white;
+      color: #555;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--nb-red);
+      border-color: var(--nb-red);
+      color: white;
+    }
+    .gallery-item { cursor: pointer; }
+
+    /* Placeholder tiles with icons */
+    .ph { background: linear-gradient(135deg, #f0f0f0, #e0e0e0); }
+    .ph-1 { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+    .ph-2 { background: linear-gradient(135deg, #e31837, #8b0f1f); }
+    .ph-3 { background: linear-gradient(135deg, #2d5016, #4a8c24); }
+    .ph-4 { background: linear-gradient(135deg, #0f3460, #1a5fa8); }
+    .ph-5 { background: linear-gradient(135deg, #4a0e5e, #8b2fc9); }
+    .ph-6 { background: linear-gradient(135deg, #1a1a1a, #333); }
+
+    .ph-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .ph-inner .ph-icon { font-size: 2.8rem; }
+    .ph-inner .ph-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.85); }
+    .ph-inner .ph-sub { font-size: 0.65rem; color: rgba(255,255,255,0.5); }
+
+    .upload-note {
+      background: #f9f9f9;
+      border: 2px dashed var(--nb-border);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #888;
+    }
+    .upload-note h4 { color: #333; margin-bottom: 8px; }
+    .upload-note p { font-size: 0.85rem; }
+
+    .social-gallery-cta {
+      background: var(--nb-black);
+      color: white;
+      border-radius: var(--radius);
+      padding: 40px;
+      text-align: center;
+      margin-top: 56px;
+    }
+    .social-gallery-cta h3 { font-size: 1.4rem; font-weight: 900; margin-bottom: 10px; }
+    .social-gallery-cta p { color: #aaa; margin-bottom: 24px; font-size: 0.9rem; }
+    .social-gallery-cta .social-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .social-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 20px 32px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: white;
+      transition: transform var(--transition), opacity var(--transition);
+      min-width: 140px;
+    }
+    .social-card:hover { transform: translateY(-4px); opacity: 0.85; }
+    .social-card.linkedin { background: #0077b5; }
+    .social-card.facebook { background: #1877f2; }
+    .social-card.twitter { background: #111; border: 1px solid #333; }
+    .social-card .sc-icon { font-size: 2rem; }
+    .social-card .sc-name { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+    .social-card .sc-handle { font-size: 0.72rem; color: rgba(255,255,255,0.7); }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    USA B1/B2 Visa Application Portfolio &nbsp;|&nbsp; <span>Costantine Mapiye</span> &nbsp;|&nbsp; Lifestyle Gallery
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nb-logo">NB</div>
+        <div>
+          <div class="brand-name">Costantine Mapiye</div>
+          <div class="brand-sub">Business &amp; Marketing Manager</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="letter.html">Cover Letter</a></li>
+        <li><a href="engagements.html">Engagements</a></li>
+        <li><a href="itinerary.html">Itinerary</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+      </ul>
+      <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Lifestyle Gallery</h1>
+    <p>A visual snapshot of professional life, community, and Cape Town culture</p>
+  </div>
+
+  <section class="page-section">
+    <div class="container">
+
+      <!-- FILTER -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterGallery('all', this)">All</button>
+        <button class="filter-btn" onclick="filterGallery('work', this)">Work &amp; Brand</button>
+        <button class="filter-btn" onclick="filterGallery('events', this)">Events</button>
+        <button class="filter-btn" onclick="filterGallery('running', this)">Running &amp; Fitness</button>
+        <button class="filter-btn" onclick="filterGallery('cpt', this)">Cape Town Life</button>
+        <button class="filter-btn" onclick="filterGallery('personal', this)">Personal</button>
+      </div>
+
+      <!-- UPLOAD NOTE -->
+      <div class="upload-note">
+        <h4>&#128247; Photo Gallery</h4>
+        <p>Add your photos to the <code>assets/</code> folder and update the <code>src</code> attributes below.<br />
+        Placeholder tiles are shown until real photos are added.</p>
+      </div>
+
+      <!-- GALLERY GRID -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- Work & Brand -->
+        <div class="gallery-item" data-cat="work" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-2 ph-inner" style="background:linear-gradient(135deg,#e31837,#8b0f1f);">
+            <img src="assets/gallery/work-1.jpg" alt="NB Store Floor" style="display:none;" />
+            <span class="ph-icon">&#127968;</span>
+            <span class="ph-label">NB Store Floor</span>
+            <span class="ph-sub">Cape Town Flagship</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">New Balance — V&amp;A Waterfront Store Floor</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="work" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-1 ph-inner" style="background:linear-gradient(135deg,#1a1a2e,#2a0f2e);">
+            <img src="assets/gallery/work-2.jpg" alt="Team Meeting" style="display:none;" />
+            <span class="ph-icon">&#128101;</span>
+            <span class="ph-label">Team Strategy Session</span>
+            <span class="ph-sub">New Balance CPT</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Marketing Strategy Session — NB Team</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="work" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-6 ph-inner">
+            <img src="assets/gallery/work-3.jpg" alt="Product Display" style="display:none;" />
+            <span class="ph-icon">&#128247;</span>
+            <span class="ph-label">Product Showcase</span>
+            <span class="ph-sub">Collection Campaign</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Winter 2026 Collection Display</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="work" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-2 ph-inner" style="background:linear-gradient(135deg,#8b0f1f,#e31837);">
+            <img src="assets/gallery/work-4.jpg" alt="Brand Activation" style="display:none;" />
+            <span class="ph-icon">&#128197;</span>
+            <span class="ph-label">Brand Activation</span>
+            <span class="ph-sub">NB Event Setup</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Brand Activation Setup — Cape Town</div></div>
+        </div>
+
+        <!-- Events -->
+        <div class="gallery-item" data-cat="events" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-4 ph-inner">
+            <img src="assets/gallery/event-1.jpg" alt="Cape Town Marathon" style="display:none;" />
+            <span class="ph-icon">&#127939;</span>
+            <span class="ph-label">CPT Marathon</span>
+            <span class="ph-sub">Sanlam Cape Town 2025</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Sanlam Cape Town Marathon — NB Activation 2025</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="events" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-5 ph-inner">
+            <img src="assets/gallery/event-2.jpg" alt="NB Launch Event" style="display:none;" />
+            <span class="ph-icon">&#127881;</span>
+            <span class="ph-label">Product Launch</span>
+            <span class="ph-sub">NB Fresh Foam X</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Fresh Foam X Launch Event — Canal Walk</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="events" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-3 ph-inner">
+            <img src="assets/gallery/event-3.jpg" alt="Regional Conference" style="display:none;" />
+            <span class="ph-icon">&#127942;</span>
+            <span class="ph-label">Regional Conference</span>
+            <span class="ph-sub">NB SA — Joburg 2025</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">NB SA Regional Managers' Conference — Johannesburg</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="events" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-2 ph-inner">
+            <img src="assets/gallery/event-4.jpg" alt="Community Run" style="display:none;" />
+            <span class="ph-icon">&#128293;</span>
+            <span class="ph-label">Community Run</span>
+            <span class="ph-sub">NB Running Community</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">NB Cape Town Running Community — Weekly Run</div></div>
+        </div>
+
+        <!-- Running & Fitness -->
+        <div class="gallery-item" data-cat="running" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-3 ph-inner">
+            <img src="assets/gallery/run-1.jpg" alt="Running Promenade" style="display:none;" />
+            <span class="ph-icon">&#127939;</span>
+            <span class="ph-label">Sea Point Promenade Run</span>
+            <span class="ph-sub">Morning Training</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Early Morning Run — Sea Point Promenade</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="running" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-4 ph-inner">
+            <img src="assets/gallery/run-2.jpg" alt="Fitness" style="display:none;" />
+            <span class="ph-icon">&#128170;</span>
+            <span class="ph-label">Gym &amp; Fitness</span>
+            <span class="ph-sub">Cape Town Active Lifestyle</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Fitness Routine — Cape Town</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="running" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-1 ph-inner">
+            <img src="assets/gallery/run-3.jpg" alt="Trail Run" style="display:none;" />
+            <span class="ph-icon">&#127956;</span>
+            <span class="ph-label">Table Mountain Trail</span>
+            <span class="ph-sub">Weekend Run</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Trail Run — Table Mountain, Cape Town</div></div>
+        </div>
+
+        <!-- Cape Town Life -->
+        <div class="gallery-item" data-cat="cpt" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-4 ph-inner">
+            <img src="assets/gallery/cpt-1.jpg" alt="Waterfront" style="display:none;" />
+            <span class="ph-icon">&#127754;</span>
+            <span class="ph-label">V&amp;A Waterfront</span>
+            <span class="ph-sub">Cape Town</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">V&amp;A Waterfront — Cape Town Home</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="cpt" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-3 ph-inner">
+            <img src="assets/gallery/cpt-2.jpg" alt="Table Mountain" style="display:none;" />
+            <span class="ph-icon">&#127956;</span>
+            <span class="ph-label">Table Mountain</span>
+            <span class="ph-sub">Cape Town Landmark</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Table Mountain — The Icon of Cape Town</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="cpt" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-2 ph-inner">
+            <img src="assets/gallery/cpt-3.jpg" alt="Cape Town City" style="display:none;" />
+            <span class="ph-icon">&#127970;</span>
+            <span class="ph-label">City Bowl Life</span>
+            <span class="ph-sub">Cape Town CBD</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Cape Town City Bowl — Daily Life</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="cpt" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-5 ph-inner">
+            <img src="assets/gallery/cpt-4.jpg" alt="Cape Town Food" style="display:none;" />
+            <span class="ph-icon">&#127829;</span>
+            <span class="ph-label">Cape Town Food Scene</span>
+            <span class="ph-sub">Cape Malay Quarter</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Bo-Kaap &amp; Cape Town Food Culture</div></div>
+        </div>
+
+        <!-- Personal -->
+        <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-6 ph-inner">
+            <img src="assets/gallery/personal-1.jpg" alt="Professional Portrait" style="display:none;" />
+            <span class="ph-icon">&#128084;</span>
+            <span class="ph-label">Professional Portrait</span>
+            <span class="ph-sub">Costantine Mapiye</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Professional Portrait — Costantine Mapiye</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-1 ph-inner">
+            <img src="assets/gallery/personal-2.jpg" alt="Community" style="display:none;" />
+            <span class="ph-icon">&#128145;</span>
+            <span class="ph-label">Community &amp; Family</span>
+            <span class="ph-sub">Cape Town Roots</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Community &amp; Family — Cape Town</div></div>
+        </div>
+
+        <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+          <div class="gallery-placeholder ph ph-4 ph-inner">
+            <img src="assets/gallery/personal-3.jpg" alt="Travel" style="display:none;" />
+            <span class="ph-icon">&#9992;&#65039;</span>
+            <span class="ph-label">Previous Travel</span>
+            <span class="ph-sub">Southern Africa</span>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-caption">Travel History — Southern Africa</div></div>
+        </div>
+
+      </div>
+
+      <!-- SOCIAL MEDIA CTA -->
+      <div class="social-gallery-cta">
+        <h3>More Photos &amp; Updates</h3>
+        <p>Follow Costantine on social media for more lifestyle content, brand updates, and Cape Town life.</p>
+        <div class="social-row">
+          <a href="https://www.linkedin.com/in/costantine-mapiye" target="_blank" rel="noopener" class="social-card linkedin">
+            <span class="sc-icon">in</span>
+            <span class="sc-name">LinkedIn</span>
+            <span class="sc-handle">Costantine Mapiye</span>
+          </a>
+          <a href="https://www.facebook.com/costantine.mapiye" target="_blank" rel="noopener" class="social-card facebook">
+            <span class="sc-icon">f</span>
+            <span class="sc-name">Facebook</span>
+            <span class="sc-handle">/costantine.mapiye</span>
+          </a>
+          <a href="https://x.com/CostantineM" target="_blank" rel="noopener" class="social-card twitter">
+            <span class="sc-icon">𝕏</span>
+            <span class="sc-name">X (Twitter)</span>
+            <span class="sc-handle">@CostantineM</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" src="" alt="Gallery Image" />
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Costantine Mapiye</h4>
+        <p>Business &amp; Marketing Manager</p>
+        <p>New Balance — Cape Town, SA</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="letter.html">Cover Letter</a>
+        <a href="engagements.html">Business Engagements</a>
+        <a href="itinerary.html">Itinerary</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.linkedin.com/in/costantine-mapiye" target="_blank" rel="noopener">&#128279; LinkedIn</a>
+        <a href="https://www.facebook.com/costantine.mapiye" target="_blank" rel="noopener">&#128279; Facebook</a>
+        <a href="https://x.com/CostantineM" target="_blank" rel="noopener">&#128279; X (Twitter)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Costantine Mapiye. <span>USA Visa Portfolio.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    function syncGalleryImage(img) {
+      const placeholder = img.closest('.gallery-placeholder');
+      if (!placeholder) return;
+
+      if (img.complete && img.naturalWidth > 0) {
+        img.style.display = 'block';
+        placeholder.classList.add('has-image');
+      } else {
+        img.style.display = 'none';
+        placeholder.classList.remove('has-image');
+      }
+    }
+
+    function filterGallery(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        if (cat === 'all' || item.dataset.cat === cat) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function openLightbox(item) {
+      const img = item.querySelector('img');
+      if (img && img.naturalWidth > 0) {
+        document.getElementById('lightboxImg').src = img.src;
+        document.getElementById('lightbox').classList.add('open');
+      }
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.getElementById('lightboxImg').src = '';
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    document.querySelectorAll('.gallery-placeholder img').forEach(img => {
+      img.addEventListener('load', () => syncGalleryImage(img));
+      img.addEventListener('error', () => syncGalleryImage(img));
+      syncGalleryImage(img);
+    });
+  </script>
+
+</body>
+</html>

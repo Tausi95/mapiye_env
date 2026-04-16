@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Costantine Mapiye — USA Visa Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .about-photo {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #ddd;
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      color: #aaa;
+      position: relative;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-photo .photo-badge {
+      position: absolute;
+      bottom: 16px; left: 16px;
+      background: var(--nb-red);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.06em;
+    }
+    .about-detail { display: flex; flex-direction: column; gap: 24px; }
+    .detail-row { display: flex; gap: 12px; align-items: flex-start; }
+    .detail-icon { font-size: 1.2rem; margin-top: 2px; flex-shrink: 0; }
+    .detail-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--nb-red); }
+    .detail-val { font-size: 0.9rem; color: #333; }
+    .nb-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #111;
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .nb-tag .dot { width: 8px; height: 8px; background: var(--nb-red); border-radius: 50%; }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    USA B1/B2 Visa Application Portfolio &nbsp;|&nbsp; <span>Costantine Mapiye</span> &nbsp;|&nbsp; Business &amp; Marketing Manager — New Balance, Cape Town
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nb-logo">NB</div>
+        <div>
+          <div class="brand-name">Costantine Mapiye</div>
+          <div class="brand-sub">Business &amp; Marketing Manager</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="letter.html">Cover Letter</a></li>
+        <li><a href="engagements.html">Engagements</a></li>
+        <li><a href="itinerary.html">Itinerary</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-avatar">
+        <img src="assets/profile.jpg" alt="Costantine Mapiye" onerror="this.style.display='none'" />
+        👤
+      </div>
+      <div class="hero-text">
+        <h1>Costantine <span>Mapiye</span></h1>
+        <div class="title-badge">Business &amp; Marketing Manager</div>
+        <p>New Balance — V&amp;A Waterfront &amp; Canal Walk, Cape Town, South Africa.<br />
+        Visa applicant for a professional development visit to the United States of America.</p>
+        <div class="hero-cta">
+          <a href="letter.html" class="btn btn-primary">&#128196; View Cover Letter</a>
+          <a href="itinerary.html" class="btn btn-outline">&#9992;&#65039; Travel Itinerary</a>
+        </div>
+        <div class="social-strip">
+          <a href="https://www.linkedin.com/in/costantine-mapiye" target="_blank" rel="noopener" class="social-link" title="LinkedIn">in</a>
+          <a href="https://www.facebook.com/costantine.mapiye" target="_blank" rel="noopener" class="social-link" title="Facebook">f</a>
+          <a href="https://x.com/CostantineM" target="_blank" rel="noopener" class="social-link" title="X / Twitter">𝕏</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="page-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="assets/profile.jpg" alt="Costantine Mapiye" onerror="this.style.display='none'" />
+          👤
+          <div class="photo-badge">New Balance CPT</div>
+        </div>
+        <div>
+          <div class="section-label">About Me</div>
+          <h2 class="section-title">Professional Profile</h2>
+          <div class="nb-tag"><span class="dot"></span> New Balance — Cape Town</div>
+          <p style="color:#555; font-size:0.92rem; margin-bottom:24px; line-height:1.8;">
+            I am a results-driven Business and Marketing Manager with over six years of experience in
+            retail brand management, consumer engagement, and strategic marketing within the sports and
+            lifestyle sector. At New Balance Cape Town, I lead end-to-end campaign strategies, partner
+            relationship management, and in-store performance optimization across two flagship locations.
+          </p>
+          <div class="about-detail">
+            <div class="detail-row">
+              <div class="detail-icon">&#127968;</div>
+              <div>
+                <div class="detail-label">Employer</div>
+                <div class="detail-val">New Balance Athletics — Cape Town, South Africa</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">&#128205;</div>
+              <div>
+                <div class="detail-label">Location</div>
+                <div class="detail-val">Cape Town, Western Cape, South Africa</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">&#127760;</div>
+              <div>
+                <div class="detail-label">Nationality</div>
+                <div class="detail-val">Malawian — Permanent Resident, South Africa</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">&#128222;</div>
+              <div>
+                <div class="detail-label">Purpose of USA Visit</div>
+                <div class="detail-val">Professional development, brand partnership meetings, and NB North America retail study tour</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div class="stat-row">
+        <div class="stat-item">
+          <span class="stat-num">6+</span>
+          <span class="stat-label">Years in Retail Management</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">2</span>
+          <span class="stat-label">NB Flagship Stores</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">40+</span>
+          <span class="stat-label">Brand Campaigns Led</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">R12M+</span>
+          <span class="stat-label">Annual Revenue Managed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="page-section">
+    <div class="container">
+      <div class="section-label">Core Competencies</div>
+      <h2 class="section-title">Skills &amp; Expertise</h2>
+      <p class="section-sub">Specialized skill set developed across retail, brand strategy, and team leadership.</p>
+
+      <div class="grid-2">
+        <div>
+          <div class="skill-item">
+            <div class="skill-label">Brand Marketing Strategy <span>95%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label">Retail Sales Management <span>92%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label">Digital &amp; Social Media Marketing <span>88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label">Business Development <span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="skill-item">
+            <div class="skill-label">Event &amp; Campaign Management <span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label">Team Leadership &amp; Coaching <span>87%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:87%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label">Financial Planning &amp; Budgeting <span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label">Partner &amp; Stakeholder Relations <span>93%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:93%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="page-section">
+    <div class="container">
+      <div class="section-label">What You'll Find Here</div>
+      <h2 class="section-title">Portfolio Sections</h2>
+      <p class="section-sub">A complete overview of my professional background, travel plans, and lifestyle.</p>
+      <div class="grid-3">
+        <a href="letter.html" style="text-decoration:none;">
+          <div class="card">
+            <div class="card-icon">&#128196;</div>
+            <h3>Cover Letter</h3>
+            <p>Formal visa application letter addressed to the U.S. Embassy, detailing purpose of visit and professional standing.</p>
+          </div>
+        </a>
+        <a href="engagements.html" style="text-decoration:none;">
+          <div class="card">
+            <div class="card-icon">&#128203;</div>
+            <h3>Business Engagements</h3>
+            <p>Timeline of professional activities, meetings, brand events, and milestones at New Balance Cape Town.</p>
+          </div>
+        </a>
+        <a href="itinerary.html" style="text-decoration:none;">
+          <div class="card">
+            <div class="card-icon">&#9992;&#65039;</div>
+            <h3>Travel Itinerary</h3>
+            <p>Detailed day-by-day USA travel plan including accommodation, meetings, and planned activities.</p>
+          </div>
+        </a>
+        <a href="gallery.html" style="text-decoration:none;">
+          <div class="card">
+            <div class="card-icon">&#128247;</div>
+            <h3>Lifestyle Gallery</h3>
+            <p>A visual snapshot of my professional and personal life in Cape Town — work events, community, and culture.</p>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/costantine-mapiye" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="card">
+            <div class="card-icon" style="background:#0077b5;">in</div>
+            <h3>LinkedIn Profile</h3>
+            <p>Full career history, endorsements, recommendations, and professional network on LinkedIn.</p>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/costantine.mapiye" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="card">
+            <div class="card-icon" style="background:#1877f2;">f</div>
+            <h3>Facebook</h3>
+            <p>Personal and professional updates, community engagement, and New Balance Cape Town event coverage.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Costantine Mapiye</h4>
+        <p>Business &amp; Marketing Manager</p>
+        <p>New Balance — Cape Town, SA</p>
+        <p style="margin-top:12px;">USA Visa Application Portfolio</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="letter.html">Cover Letter</a>
+        <a href="engagements.html">Business Engagements</a>
+        <a href="itinerary.html">Itinerary</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.linkedin.com/in/costantine-mapiye" target="_blank" rel="noopener">&#128279; LinkedIn</a>
+        <a href="https://www.facebook.com/costantine.mapiye" target="_blank" rel="noopener">&#128279; Facebook</a>
+        <a href="https://x.com/CostantineM" target="_blank" rel="noopener">&#128279; X (Twitter)</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Cape Town, Western Cape</p>
+        <p>South Africa</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Costantine Mapiye. <span>USA Visa Portfolio.</span></div>
+      <div>New Balance Cape Town — Business &amp; Marketing Manager</div>
+    </div>
+  </footer>
+
+</body>
+</html>
